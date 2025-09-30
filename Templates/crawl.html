@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Web Crawler</title>
+<h2>Web Crawler</h2>
+<form method="post">
+  <label>Seed URL: <input name="url"></label><br>
+  <label>Max Pages: <input name="max_pages" type="number" value="10"></label><br>
+  <label>Delay (seconds): <input name="delay" type="number" step="0.1" value="1.0"></label><br>
+  <input type="submit" value="Start Crawl">
+</form>
+{% if message %}<p>{{ message }}</p>{% endif %}
+<a href="{{ url_for('home') }}">Home</a>

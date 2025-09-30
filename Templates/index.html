@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Build Index</title>
+<h2>Build Search Index</h2>
+<form method="post">
+  <input type="submit" value="Build Index">
+</form>
+{% if message %}<p>{{ message }}</p>{% endif %}
+{% if stats %}
+<ul>
+    <li>Documents: {{ stats['num_documents'] }}</li>
+    <li>Terms: {{ stats['num_terms'] }}</li>
+    <li>Total Tokens: {{ stats['total_tokens'] }}</li>
+</ul>
+{% endif %}
+<a href="{{ url_for('home') }}">Home</a>

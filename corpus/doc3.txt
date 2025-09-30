@@ -1,0 +1,2 @@
+BeautifulSoup is a Python library for web scraping.
+It helps extract data from HTML and XML documents.

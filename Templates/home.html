@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOGO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #4285f4;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            width: 50%;
+            max-width: 500px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #dcdcdc;
+            border-radius: 24px 0 0 24px;
+            font-size: 16px;
+            outline: none;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #4285f4;
+            color: white;
+            font-size: 16px;
+            border-radius: 0 24px 24px 0;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <h1>GoGo</h1>
+    <form action="{{ url_for('search') }}" method="POST">
+        <input type="text" name="query" placeholder="Search..." required>
+        <button type="submit">🔍</button>
+    </form>
+</body>
+</html>

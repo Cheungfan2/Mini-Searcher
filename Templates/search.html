@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 800px;
+            color: #202124;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 24px 0 0 24px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background: #4285f4;
+            color: white;
+            border-radius: 0 24px 24px 0;
+            cursor: pointer;
+        }
+        .result {
+            margin-bottom: 20px;
+        }
+        .result a {
+            font-size: 18px;
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .result a:hover {
+            text-decoration: underline;
+        }
+        .snippet {
+            font-size: 14px;
+            color: #4d5156;
+        }
+        .score {
+            font-size: 12px;
+            color: #70757a;
+        }
+    </style>
+</head>
+<body>
+    <form class="search-bar" action="{{ url_for('search') }}" method="POST">
+        <input type="text" name="query" value="{{ query }}" placeholder="Search...">
+        <button type="submit">🔍</button>
+    </form>
+
+    {% if results %}
+        {% for r in results %}
+            <div class="result">
+                <a href="#">{{ r.doc }}</a>
+                <div class="snippet">{{ r.snippet }}</div>
+                {% if r.score %}
+                    <div class="score">Relevance: {{ r.score }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
