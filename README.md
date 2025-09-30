@@ -1,5 +1,5 @@
 # Mini-Searcher
-Try to create a mini search engines with the help of ChatGPT and Claude, hope to learn about the algorithm of searching and crawling on the internet
+This is a project with the help of ChatGPT model-5 to build a mini Search Engine. In this project, we can use the crawler to crawl some website to build our index and save in the corpus file. Then we can build our json and use our Search Engine to search the keywords among the json.
 
 Website preview
 <img width="1919" height="938" alt="image" src="https://github.com/user-attachments/assets/985337c5-ead9-40d3-b204-6f587b2e2d38" />
